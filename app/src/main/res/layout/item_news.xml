@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    <data>
+        <variable
+            name="news"
+            type="io.luciferldy.jandan.model.NewsModel" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="100dip"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dip"
+            android:layout_marginRight="10dip"
+            android:layout_marginTop="16dip"
+            android:maxLines="1"
+            android:textSize="15dip"
+            android:textColor="@color/md_black"
+            tools:text="住在城市里会改变你对未来的看法"
+            android:text="@{news.title}"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="100dip"
+            android:layout_marginBottom="12dip"
+            android:layout_marginRight="80dip"
+            android:textSize="12dip"
+            android:maxLines="1"
+            tools:text="肌肉桃  2小时前"
+            android:text="@{news.editor}"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="60dip"
+            android:layout_gravity="right|bottom"
+            android:layout_marginBottom="12dip"
+            android:layout_marginRight="10dip"
+            android:textSize="12dip"
+            android:maxLines="1"
+            tools:text="33333条评论"
+            android:text="@{news.comment}"/>
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/simpleDraweeView"
+            android:layout_width="80dip"
+            android:layout_height="80dip"
+            android:layout_gravity="center_vertical"
+            fresco:placeholderImage="@drawable/cool"
+            fresco:placeholderImageScaleType="centerCrop"
+            fresco:actualImageScaleType="centerCrop"
+            app:imageUrl="@{news.imgUrl}"/>
+
+    </android.support.v7.widget.CardView>
+    
+</layout>
