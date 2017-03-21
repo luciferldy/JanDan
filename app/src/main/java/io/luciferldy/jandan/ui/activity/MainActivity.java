@@ -20,10 +20,12 @@ import io.luciferldy.jandan.ui.fragment.PageFragment;
 public class MainActivity extends AppCompatActivity {
 
     public static final String LOG_TAG = MainActivity.class.getSimpleName();
-    public static final String NEWS = "新鲜事";
-    public static final String INTERESTING = "无聊图";
-    public static final String BEAUTY = "妹纸图";
-    public static final String JOKE = "段子";
+    public static final String BASE_URL = "http://jandan.net/";
+    public static final String CATEGORY = "category";
+    public static final String NEWS = "NEWS";
+    public static final String INTERESTING = "INTERESTING";
+    public static final String BEAUTY = "BEAUTY";
+    public static final String JOKE = "JOKE";
 
     private CoordinatorLayout container;
 
@@ -81,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            return PageFragment.newInstance();
+            return PageFragment.newInstance(titles.get(position));
         }
 
         @Override

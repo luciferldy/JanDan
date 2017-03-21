@@ -26,8 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dip"
             app:tabMode="fixed"
-            app:tabGravity="fill"
-            app:tabIndicatorHeight="5dip"/>
+            app:tabGravity="fill"/>
 
     </android.support.design.widget.AppBarLayout>
 
@@ -41,8 +40,10 @@
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
+        android:layout_gravity="bottom|end"
         android:layout_margin="16dip"
-        android:src="@drawable/github" />
+        android:src="@drawable/github"
+        android:scaleType="centerCrop"
+        app:layout_behavior="io.luciferldy.jandan.behavior.ShrinkBehavior"/>
 
 </android.support.design.widget.CoordinatorLayout>
